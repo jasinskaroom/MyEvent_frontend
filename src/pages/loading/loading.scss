@@ -1,0 +1,21 @@
+page-loading {
+
+    ion-content {
+        background-color: #404040 !important;
+        text-align: center;
+    }
+
+    ion-spinner {
+        margin-top: 15px;
+    }
+
+    .spinner-ios-crescent circle,
+    .spinner-md-crescent circle  {
+      stroke: #fff;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto;
+    }
+}

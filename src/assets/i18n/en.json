@@ -1,0 +1,47 @@
+{
+	"settings"		:"Settings",
+	"activities"	:"Activities",
+	"profile"		:"Profile",
+	"rate_us"		:"Rate Us",
+	"logout" 		:"Logout",
+	"change_language":"Change Language ",
+
+	"enjoy_rewards"	:"Enjoy The Rewards",
+	"game_rule"    	:"Game Rule",
+	"total_score"  	:"Your Total Score",
+	"your_score"	:"Your Score",
+	"scan_score" 	:"Scan Your Score",
+	"redeem" 		:"Redeem Now!",
+
+	"completed"		:"Completed",
+	"update"		:"Update",
+
+	"no_event"		:"There is no active event at current time",
+
+	"profile"		:"Profile",
+	"name"			:"Name_my",
+	"email"			:"Email",
+	"passport"		:"IC / Passport",
+	"phone" 		:"Mobile Number",
+	"gender"		:"Gender",
+	"others"		:"Others",
+
+	"signout_title"	:"Are you sure you want to sign out",
+	"signout_label"	:"You'll not able to login after this",
+	"signout_confirm":"Confirm Sign Out",
+
+	"welcome" 		:"Welcome to",
+	"login_recent"	:"Recent Login",
+	"check_in"		:"CHECK-IN",
+
+	"choose_language":"Choose your preferred language",
+	"english_language":"English (EN)",
+	"chinese_language":" Chinese (ZH)",
+	"malay_language"  :"Malay (MY)",
+
+	"home" 			  :"Home",
+	"score" 		  :"Score",
+	"event_id" 		  :"Event ID",
+	"pre_registration":"Pre-Registration",
+	"profile_id": "Profile ID"
+}

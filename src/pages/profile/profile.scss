@@ -1,0 +1,53 @@
+page-profile {
+
+    .register-form {
+        padding: 15px;
+        height: 100vh;
+
+        .list-ios > .item-block:last-child,
+        .list-ios > .item-wrapper:last-child .item-block,
+        .list-ios > .item-block:first-child,
+        .list-ios .item-block .item-inner,
+        .list-md > .item-block:last-child,
+        .list-md > .item-wrapper:last-child .item-block,
+        .list-md > .item-block:first-child,
+        .list-md .item-block .item-inner {
+            border: none;
+        }
+
+        .item-ios,
+        .item-md {
+            background-color: transparent;
+        }
+
+       ion-input {
+           background-color: white;
+       }
+
+       .form-input {
+           margin-top: 8px;
+           margin-bottom: 8px;
+
+           ion-label {
+               width: 100px;
+               font-size: 14px;
+               text-align: right;
+               color: white;
+           }
+       }
+
+       .subtitle {
+           font-weight: 600;
+       }
+
+       #submit-button {
+           height: 35px;
+           margin: 0 auto;
+           font-size: 18px;
+           display: block;
+           border-color: white;
+           padding: 10px;
+           color: white;
+       }
+    }
+}

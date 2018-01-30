@@ -1,0 +1,21 @@
+page-sign-out {
+
+    .container {
+        margin-top: 100px;
+        text-align: center;
+
+        .toolbar-title {
+            color: white;
+        }
+
+        #sign-out-button {
+            height: 35px;
+            margin: 35px auto;
+            font-size: 18px;
+            display: block;
+            border-color: white;
+            padding: 10px;
+            color: white;
+        }
+    }
+}

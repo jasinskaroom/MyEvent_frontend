@@ -1,0 +1,129 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header class="header">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{activityTitle}}</ion-title>
+          <ion-buttons end>
+            <button (click)="backToHome()" ion-button outline class='home-btn'>
+           {{"home"|translate}}
+            </button>
+            </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<app-content margin-top>
+
+    <div class="container">
+        <ion-slides class="slider" (ionSlideDidChange)="acitivityChanged()">
+            <ion-slide *ngFor="let activity of activities; let slide_index = index ">
+                <ion-scroll scrollY="true">
+                    <!-- Banner -->
+                    <div *ngIf="activity.type == 'banner'">
+                        <img src="{{activity.image_url}}" alt="{{activity.title}}'s Banner">
+                    </div>
+                    <!-- Banner End -->
+
+                    <!-- Activity -->
+                    <div class="acitivity-container" *ngIf="activity.type == 'activity_list'">
+                        <div *ngFor="let stage of activity.activities">
+                            <ion-label class="title-label">{{stage.title}}</ion-label>
+                            <ion-grid>
+                                <ion-row class="row-game" *ngFor="let game of stage.games; let i = index">
+                                    <ion-col col-1>
+                                        <ion-label>{{i + 1}}.</ion-label>
+                                    </ion-col>
+                                    <ion-col col-11>
+                                        <button (click)="showGameActivity(game.game_type, game.id)" ion-button clear>{{game.title}}</button>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </div>
+                        <div>
+                            <ion-label class="title-label">{{"enjoy_rewards"|translate}}</ion-label>
+                            <ion-grid>
+                                <ion-row class="row-game">
+                                    <ion-col col-1>
+                                        <ion-label>1.</ion-label>
+                                    </ion-col>
+                                    <ion-col col-11>
+                                        <button (click)="showScoreActivity()" ion-button clear>{{"your_score"|translate}}</button>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </div>
+                    </div>
+                    <!-- Activity End -->
+
+                    <!-- Game Input -->
+                    <div class="game-input-container" *ngIf="activity.type == 'game_type_text_input'">
+                        <ion-grid text-wrap>
+                            <ion-row *ngFor="let field of activity.game.fields; let i = index">
+                                <ion-col col-1>
+                                    <ion-label class="no-label">{{i + 1}}</ion-label>
+                                </ion-col>
+                                <ion-col col-3>
+                                    <ion-label>{{field.name}}</ion-label>
+                                </ion-col>
+                                <ion-col col-8>
+                                    <ion-input (input)="onGameTextInput($event.target.value, activity.game.id, field.id)"></ion-input>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                    <!-- Game Input End -->
+
+                    <!-- Game Rule -->
+                    <div class="game-rule-container" *ngIf="activity.type == 'game_type_image_rule'">
+                        <ion-label>{{activity.game.title}}</ion-label>
+                        <img src="{{activity.game.image_url}}" alt="{{activity.game.name}}'s Image'">
+                        <ion-label class="title">{{"game_rule"|translate}}</ion-label>
+                        <p>{{activity.game.rule}}</p>
+                    </div>
+                    <!-- Game Rule End -->
+
+                    <!-- Score -->
+                    <div class="score-container" *ngIf="activity.type == 'score'">
+                        <ion-label >{{"profile_id"|translate}}: {{userDrawId}}</ion-label>
+                        <ion-label text-wrap class="title">{{"total_score"|translate}}</ion-label>
+                        <ion-label class="score">{{participantScore}}</ion-label>
+                    </div>
+                    <!-- Score End -->
+                </ion-scroll>
+            </ion-slide>
+        </ion-slides>
+
+        <div class="footer">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-3>
+                        <button (click)="showPreviousActivity()" class="navigation-icon" ion-button clear>
+                            <img  src="assets/icon/icon_left_arrow.png" alt="Left Arrow">
+                        </button>
+                    </ion-col>
+
+                    <ion-col col-6>
+                        <button *ngIf="!hasUserRedeem && !hideScanScore" (click)="scanQRCode()" ion-button outline>{{"scan_score"|translate}} </button>
+                        <ion-label *ngIf="hasUserRedeem"><b>Redeemed</b></ion-label>
+                        <ion-label *ngIf="!hasUserRedeem && showCompleted"><b>{{"completed"|translate}}!</b></ion-label>
+                        <button *ngIf="!hasUserRedeem && current_type=='score'" (click)="redeem()" ion-button outline>{{"redeem"|translate}} </button>
+                    </ion-col>
+
+                    <ion-col col-3>
+                        <button (click)="showNextActivity()" class="navigation-icon" ion-button clear>
+                            <img src="assets/icon/icon_right_arrow.png" alt="Left Arrow">
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+</app-content>

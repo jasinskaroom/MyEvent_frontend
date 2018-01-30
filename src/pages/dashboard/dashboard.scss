@@ -1,0 +1,119 @@
+page-dashboard {
+    .home-btn{
+        border-color:white;
+    }
+
+    .container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .slider {
+            height: calc(100% - 80px);
+            width: 100%;
+
+            ion-scroll {
+                height: 85vh;
+            }
+
+            .acitivity-container {
+
+                .col {
+                    padding: 0;
+                }
+
+                .title-label {
+                    background-color: white;
+                    color: black !important;
+                    text-align: left;
+                    padding: 8px;
+                }
+
+                .row-game {
+                    text-align: left;
+                    color: white;
+                    height:30px;
+                    margin-left:10px;
+
+                    ion-label {
+                        height: 100%;
+                        height: 2em;
+                    }
+
+                    [col-1]{
+                        ion-label{
+
+                        margin : 5px 5px 5px 0px!important;
+                        }
+                    }
+
+                    button {
+                        color: white;
+                        margin-top: -1px;
+                    }
+
+
+                }
+            }
+
+            .game-input-container {
+
+                ol {
+                    color: white;
+                }
+
+                ion-label {
+                    text-align: left;
+                    display: block;
+                }
+
+                .no-label {
+                    height: 100%;
+                }
+
+                ion-input {
+                    background-color: white;
+                    color: black;
+                    height: 100%;
+                }
+            }
+
+            .game-rule-container {
+                text-align: center;
+
+                .title {
+                    font-size: 24px;
+                }
+            }
+
+            .score-container {
+
+                .title {
+                    margin-top: 50px;
+                    font-size: 10vw;
+                }
+
+                .score {
+                    font-size: 30vw;
+                }
+            }
+        }
+
+        .footer {
+            height: 70px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+            button {
+                border-color: white;
+                color: white;
+            }
+        }
+    }
+}

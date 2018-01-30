@@ -1,0 +1,20 @@
+/*
+
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { LanguageSelectionPage } from './language-selection';
+import { ComponentsModule } from '../../components/components.module';
+
+@NgModule({
+  declarations: [
+    LanguageSelectionPage
+  ],
+  imports: [
+    IonicPageModule.forChild(LanguageSelectionPage),
+    ComponentsModule
+  ]
+})
+export class LanguageSelectionPageModule {}
+
+
+*/

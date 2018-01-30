@@ -1,0 +1,64 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+  <div class="header">
+        <ion-label>{{"welcome"|translate}}</ion-label>
+        <img class="event-logo" img-cache src="{{eventLogo}}" alt="Event's Logo">
+    </div>
+<app-content>
+
+  <div style="height: 100%">
+
+    <ion-scroll class="register-form" scrollY='true'>
+        <ion-list>
+            <ion-item text-wrap *ngIf="recentUser != undefiend && recentUser != null">
+                <ion-label> {{"login_recent"|translate}}: {{recentUser.email}} | {{"score"|translate}}: {{recentUser.score}}</ion-label>
+            </ion-item>
+            <ion-item class="form-input">
+                <button id="submit-button" (click)="onPreRegistration()" ion-button outline>{{"pre_registration"|translate}}</button>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"event_id"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.event_id"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"name"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.name"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"passport"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.identity_passport"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"email"|translate}}</ion-label>
+                <ion-input type="email" [(ngModel)]="form.email"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"phone"|translate}}</ion-label>
+                <ion-input type="tel" [(ngModel)]="form.mobile_number"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"gender"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.gender" readonly (click)="showGenderSelection()"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="extraFields != undefined && extraFields.length > 0">
+                <ion-label class="subtitle">{{"others"|translate}}</ion-label>
+            </ion-item>
+            <ion-item class="form-input" *ngFor="let field of extraFields">
+                <ion-label>{{field.name}}</ion-label>
+                <ion-input (input)="extraFieldInputChange($event.target.value, field.id)"></ion-input>
+            </ion-item>
+            <ion-item>
+                <button id="submit-button" (click)="onSubmitForm()" ion-button outline>{{"check_in"|translate}}</button>
+            </ion-item>
+        </ion-list>
+    </ion-scroll>
+    </div>
+</app-content>
+  <div class="footer">
+        <img class="logo" src="assets/images/logo.png" alt="App's Logo">
+    </div>

@@ -1,0 +1,56 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header class="header">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{"profile"|translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<app-content margin-top>
+    <ion-scroll class="register-form" scrollY="true">
+        <ion-list>
+            <ion-item style="text-align: center;" *ngIf="profile != undefined">
+                <ion-label >{{"profile_id"|translate}}: {{profile.id}}</ion-label>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"email"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.name"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"passport"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.identity_passport"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"email"|translate}}</ion-label>
+                <ion-input readonly="true" type="email" [(ngModel)]="form.email"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"phone"|translate}}</ion-label>
+                <ion-input type="tel" [(ngModel)]="form.mobile_number"></ion-input>
+            </ion-item>
+            <ion-item class="form-input">
+                <ion-label>{{"gender"|translate}}</ion-label>
+                <ion-input [(ngModel)]="form.gender" readonly (click)="showGenderSelection()"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="extraFields != undefined && extraFields.length > 0">
+                <ion-label class="subtitle">{{"others"|translate}}</ion-label>
+            </ion-item>
+            <ion-item class="form-input" *ngFor="let field of extraFields">
+                <ion-label>{{field.name}}</ion-label>
+                <ion-input (input)="extraFieldInputChange($event.target.value, field.id)" value="{{ field.value ? field.value : '' }}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <button id="submit-button" (click)="onSubmitForm()" ion-button outline>{{"update"|translate}}</button>
+            </ion-item>
+        </ion-list>
+    </ion-scroll>
+
+</app-content>
